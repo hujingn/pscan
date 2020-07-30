@@ -1,0 +1,45 @@
+/* 样式字体变量，element-ui没有的在这里定义 */
+@import './variables.scss';
+/* element-ui全部变量 */
+@import "./element-variables.scss";
+/* 改变 icon 字体路径变量，必需 */
+$--font-path: './fonts';
+@import './reset.scss';
+@import './mixin.scss';
+@import './transition.scss';
+/* 引入element-ui样式 */
+@import "../../../node_modules/element-ui/packages/theme-chalk/src/index";
+/* 重写部分element-ui样式 */
+@import './element-ui.scss';
+/* 左侧菜单栏样式 */
+@import './sidebar.scss';
+/* 页面样式主文件 */
+@import './business.scss';
+/* 公共组件样式 */
+@import './common.scss';
+
+
+/* default 默认主题 */
+/* 其他主题共用default样式文件，只使用自定义变量，无法通过变量实现的样式，写在这里 */
+
+  /* width */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 6px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: red; 
+  }

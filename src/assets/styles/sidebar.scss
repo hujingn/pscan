@@ -1,0 +1,215 @@
+#app {
+  // 主体区域
+  .main-container {
+    min-height: 100%;
+    height: 100%;
+    transition: margin-left .28s;
+    margin-left: 180px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+  // 侧边栏
+  .sidebar-container {
+    transition: width 0.28s;
+    width: 180px !important;
+    height: 100%;
+    position: fixed;
+    font-size: 0px;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 2001;
+    overflow: hidden;
+    //reset element-ui css
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+    .el-scrollbar__bar.is-vertical{
+      right: 0px;
+    }
+    .scrollbar-wrapper {
+      overflow-x: hidden!important;
+      background: linear-gradient($lightThemeColor, $darkThemeColor);
+      .el-scrollbar__view {
+        height: 100%;
+      }
+    }
+    .is-horizontal {
+      display: none;
+    }
+    a {
+      display: inline-block;
+      width: 100%;
+      overflow: hidden;
+    }
+    .svg-icon {
+      margin-right: 16px;
+    }
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+      background-color: transparent;
+
+      &.left-menu{
+
+      }
+      .menu-logo {
+        padding: 20px 30px;
+      }
+      //子菜单居中显示
+      .el-submenu {
+        .el-menu {
+          a {
+            text-align: center;
+          }
+        }
+      }
+    }
+    .is-active > .el-submenu__title{
+      color: #f4f4f5!important;
+    }
+    .el-submenu__icon-arrow{
+      color: white!important;
+    }
+    .el-submenu__title {
+      font-size: 16px;
+    }
+  }
+  .hideSidebar {
+    .sidebar-container {
+      width: 56px !important;
+    }
+    .main-container {
+      margin-left: 56px;
+    }
+    .submenu-title-noDropdown {
+      text-align: center;
+      position: relative;
+      .el-tooltip {
+        padding: 0 10px !important;
+      }
+    }
+    .el-submenu {
+      overflow: hidden;
+      &>.el-submenu__title {
+        text-align: center;
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
+    .menu-logo {
+      height: auto!important;
+      padding: 10px 2px 10px 2px!important;
+
+      &.simple {
+        padding: 10px!important;
+      }
+    }
+    .svg-icon {
+      margin-right: 0;
+    }
+  }
+  .el-menu-item {
+    color: #303133;
+  }
+  .el-menu-item:hover, .el-menu-item:focus {
+    background-color: inherit;
+  }
+  //hover样式
+  .el-menu-item, .el-submenu__title {
+    //background-color: $menuBg;
+    transition: background-color .3s;
+  }
+  .el-menu-item:hover, .el-submenu__title:hover {
+    background-color: rgba(255,255,255,0.1);
+  }
+  .sidebar-container .nest-menu .el-submenu>.el-submenu__title,
+  .sidebar-container .el-submenu .el-menu-item {
+    min-width: 180px !important;
+    //background-color: $subMenuBg !important;
+    //background-color: $themeColor;
+    &:hover {
+      background-color: rgba(255,255,255,0.1) !important;
+    }
+  }
+  //选中样式
+  .router-link-active .el-menu-item, .sidebar-container .el-submenu .router-link-active .el-menu-item {
+    background-color: rgba(255,255,255,0.3);
+  }
+  .el-menu--collapse .el-menu .el-submenu {
+    min-width: 180px !important;
+  }
+
+  //适配移动端
+  .mobile {
+    .main-container {
+      margin-left: 0px;
+    }
+    .sidebar-container {
+      transition: transform .28s;
+      width: 180px !important;
+    }
+    &.hideSidebar {
+      .sidebar-container {
+        transition-duration: 0.3s;
+        transform: translate3d(-180px, 0, 0);
+      }
+    }
+  }
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
+    }
+  }
+}
+
+.el-menu--vertical{
+  & >.el-menu{
+    .svg-icon{
+      margin-right: 16px;
+    }
+  }
+
+  .el-menu-item {
+    span {
+      color: #303133 !important;
+    }
+  }
+
+  &.popper-class {
+    .el-menu {
+      background-color: $darkThemeColor;
+      color: white;
+
+      .el-menu-item {
+        &.is-active {
+          background-color: rgba(255,255,255,0.3) !important;
+        }
+        span {
+          color: white !important;
+        }
+      }
+      .el-menu-item:hover, .el-submenu__title:hover {
+        background-color: rgba(255,255,255,0.1);
+      }
+    }
+  }
+}
+

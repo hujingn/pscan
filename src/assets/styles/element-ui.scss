@@ -1,0 +1,93 @@
+//to rewrite element-ui default css
+.el-upload {
+    .el-upload__input {
+        display: none;
+    }
+}
+
+//暂时性解决diolag 问题 https://github.com/ElemeFE/element/issues/2461
+.el-dialog {
+    transform: none;
+    left: 0;
+    position: relative;
+    margin: 0 auto;
+    background-color: #fff;
+    min-width: 510px;
+}
+
+.el-tabs {
+    .el-tabs__header {
+        margin-bottom: 0;
+    }
+    .el-tabs__nav-scroll {
+        padding-left: 20px;
+    }
+}
+
+.el-table {
+    .el-table__header {
+        thead {
+            font-weight: bold;
+        }
+        .ascending {
+            .sort-caret.ascending {
+                border-bottom-color: $--color-primary;
+            }
+        }
+        .descending {
+            .sort-caret.descending {
+                border-top-color: $--color-primary;
+            }
+        }
+    }
+    .el-table__body {
+        .avatar {
+            padding: 0;
+            text-align: center;
+            .cell {
+                padding: 5px;
+                line-height: 0;
+                font-size: 0;
+                text-align: center;
+            }
+            .avatar-bg {
+                width: 60px;
+                height: 60px;
+                border-radius: 30px;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top center;
+            }
+        }
+    }
+    .col-center {
+        text-align: center;
+    }
+}
+
+.el-pagination .el-pager {
+    li:hover {
+        color: #589ef8;
+    }
+    li.active {
+        &:hover {
+            color: #589ef8;
+        }
+        color: #589ef8;
+    }
+}
+
+.el-loading-mask {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.el-drawer {
+    background-color: #fff;
+    span {
+        outline: none;
+    }
+}
+
+.el-drawer.rtl {
+    width: 25% !important;
+}
